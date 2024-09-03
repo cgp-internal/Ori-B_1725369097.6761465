@@ -1,0 +1,55 @@
+{
+    "app.py": {
+        "description": "Main entry point for the application. Sets up the Flask server, defines routes, and starts the server.",
+        "dependencies": {
+            "templates/index.html": [
+                "index.html"
+            ],
+            "routes.py": [
+                "say_hi_route"
+            ]
+        },
+        "exposes": [
+            "app"
+        ]
+    },
+    "routes.py": {
+        "description": "Defines routes for the Flask application.",
+        "dependencies": {
+            "controllers/handler.py": [
+                "say_hi"
+            ]
+        },
+        "exposes": [
+            "say_hi_route"
+        ]
+    },
+    "controllers/handler.py": {
+        "description": "Handles requests and returns responses for the Flask application.",
+        "exposes": [
+            "say_hi"
+        ]
+    },
+    "templates/index.html": {
+        "description": "HTML template for the 'Hello World' page.",
+        "exposes": [
+            "index.html"
+        ]
+    },
+    "static/style.css": {
+        "description": "CSS styles for the 'Hello World' page.",
+        "exposes": []
+    },
+    "requirements.txt": {
+        "description": "List of Python package dependencies for the project.",
+        "exposes": []
+    },
+    ".gitignore": {
+        "description": ".gitignore with venv and __pycache__",
+        "exposes": []
+    },
+    "run.sh": {
+        "description": "bash run script, should: install Python, init a virtual environment, install Flask",
+        "exposes": []
+    }
+}
